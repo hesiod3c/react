@@ -1,7 +1,8 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import Breadcrumb from './index';
 
-import styles from './breadcrumb.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.breadcrumb;
 
 /** @test {Breadcrumb} */
 describe('Breadcrumb component', function() {
@@ -18,7 +19,7 @@ describe('Breadcrumb component', function() {
     });
 
     it('Should output a breadcrumb with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles['breadcrumb-list']));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes['breadcrumb-list']));
     });
   });
 

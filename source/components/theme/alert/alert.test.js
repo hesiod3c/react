@@ -1,8 +1,9 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import Alert from './index';
 import Icon from '../icon';
 
-import styles from './alert.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.alert;
 
 /** @test {Alert} */
 describe('Alert component', function() {
@@ -17,7 +18,7 @@ describe('Alert component', function() {
     });
 
     it('Should output a alert with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles.info));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes.info));
     });
   });
 
@@ -27,21 +28,21 @@ describe('Alert component', function() {
       let instance = ReactTestUtils.renderIntoDocument(
         <Alert type="success"><p>Teste</p></Alert>
       );
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles.success));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes.success));
     });
 
     it('Should have a alert with warning style', () => {
       let instance = ReactTestUtils.renderIntoDocument(
         <Alert type="warning"><p>Teste</p></Alert>
       );
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles.warning));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes.warning));
     });
 
     it('Should have a alert with danger style', () => {
       let instance = ReactTestUtils.renderIntoDocument(
         <Alert type="danger"><p>Teste</p></Alert>
       );
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles.danger));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes.danger));
     });
   });
 
@@ -57,7 +58,7 @@ describe('Alert component', function() {
     });
 
     it('Should have className', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles['alert--icon']));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes['alert--icon']));
     });
 
     it('Should output a alert with icon and default style', () => {
@@ -80,7 +81,7 @@ describe('Alert component', function() {
     });
 
     it('Should have dismissable style with onDismiss', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles.dismissable));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes.dismissable));
     });
   });
 
@@ -93,7 +94,7 @@ describe('Alert component', function() {
     );
 
     it('Should have dark style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles['alert--dark']));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes['alert--dark']));
     });
   });
 

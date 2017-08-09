@@ -1,7 +1,8 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import Panel from './index';
 
-import styles from './panel.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.panel;
 
 /** @test {Panel} */
 describe('Panel component', function() {
@@ -16,7 +17,7 @@ describe('Panel component', function() {
     });
 
     it('Should output a panel with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles.panel));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes.panel));
     });
   });
 });

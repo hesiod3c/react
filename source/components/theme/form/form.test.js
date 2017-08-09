@@ -1,7 +1,8 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import Form from './index';
 
-import styles from './form.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.form;
 
 /** @test {Form} */
 describe('Form component', function() {
@@ -17,7 +18,7 @@ describe('Form component', function() {
     });
 
     it('Should output a form with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles.form));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes.form));
     });
   });
 
@@ -29,14 +30,14 @@ describe('Form component', function() {
       let instance = ReactTestUtils.renderIntoDocument(
         <Form onSubmit={noop} style="horizontal"></Form>
       );
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles.horizontal));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes.horizontal));
     });
 
     it('Should output a form with inline style', () => {
       let instance = ReactTestUtils.renderIntoDocument(
         <Form onSubmit={noop} style="inline"></Form>
       );
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles.inline));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes.inline));
     });
   });
 });

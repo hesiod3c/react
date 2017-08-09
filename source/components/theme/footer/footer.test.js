@@ -1,4 +1,4 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import Footer from './index';
 
 /** @test {Footer} */

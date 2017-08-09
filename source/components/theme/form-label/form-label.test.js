@@ -1,7 +1,8 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import FormLabel from './index';
 
-import styles from './form-label.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.formLabel;
 
 /** @test {FormLabel} */
 describe('FormLabel component', function() {
@@ -16,7 +17,7 @@ describe('FormLabel component', function() {
     });
 
     it('Should output a form label with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles.label));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes.label));
     });
   });
 });

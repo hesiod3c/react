@@ -1,7 +1,8 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import Image from './index';
 
-import styles from './image.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.image;
 
 /** @test {Image} */
 describe('Image component', function() {
@@ -16,7 +17,7 @@ describe('Image component', function() {
     });
 
     it('Should output an image with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles.left));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes.left));
     });
   });
 });

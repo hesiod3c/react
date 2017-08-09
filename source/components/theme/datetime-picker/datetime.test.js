@@ -1,7 +1,8 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import DatetimePicker from './index';
 
-import styles from './datetime-picker.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.datetimePicker;
 
 /** @test {DatetimePicker} */
 describe('DatetimePicker component', function() {
@@ -21,7 +22,7 @@ describe('DatetimePicker component', function() {
     });
 
     it('Should output a button with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles.rdt));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes.rdt));
     });
   });
 });

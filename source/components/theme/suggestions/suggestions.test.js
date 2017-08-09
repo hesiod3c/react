@@ -1,7 +1,8 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import Suggestions from './index';
 
-import styles from './suggestions.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.suggestions;
 
 /** @test {Suggestions} */
 describe('Suggestions component', function() {
@@ -37,7 +38,7 @@ describe('Suggestions component', function() {
     });
 
     it('Should output a suggestion with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles.suggestions));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes.suggestions));
     });
   });
 });

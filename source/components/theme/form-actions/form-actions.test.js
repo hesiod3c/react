@@ -1,7 +1,8 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import FormActions from './index';
 
-import styles from './form-actions.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.formActions;
 
 /** @test {FormActions} */
 describe('FormActions component', function() {
@@ -16,7 +17,7 @@ describe('FormActions component', function() {
     });
 
     it('Should output a form actions with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles['form-group-actions']));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes['form-group-actions']));
     });
   });
 });

@@ -1,7 +1,8 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import Button from './index';
 
-import styles from './button.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.button;
 
 /** @test {Button} */
 describe('Button component', function() {
@@ -16,7 +17,7 @@ describe('Button component', function() {
     });
 
     it('Should output a button with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles.default));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes.default));
     });
   });
 });

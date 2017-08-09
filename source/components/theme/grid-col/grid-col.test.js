@@ -1,7 +1,8 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import GridCol from './index';
 
-import styles from './grid-col.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.gridCol;
 
 /** @test {GridCol} */
 describe('GridCol component', function() {
@@ -16,7 +17,7 @@ describe('GridCol component', function() {
     });
 
     it('Should output a grid col with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles['col']));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes['col']));
     });
   });
 });

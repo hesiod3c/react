@@ -1,7 +1,8 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import Modal from './index';
 
-import styles from './modal.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.modal;
 
 /** @test {Modal} */
 describe('Modal component', function() {
@@ -39,7 +40,7 @@ describe('Modal component', function() {
     });
 
     it('Should output a modal with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles.overlay));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes.overlay));
     });
   });
 });

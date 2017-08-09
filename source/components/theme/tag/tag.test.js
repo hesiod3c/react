@@ -1,7 +1,8 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import Tag from './index';
 
-import styles from './tag.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.tag;
 
 /** @test {Tag} */
 describe('Tag component', function() {
@@ -16,7 +17,7 @@ describe('Tag component', function() {
     });
 
     it('Should output a tag with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles.tag));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes.tag));
     });
   });
 });

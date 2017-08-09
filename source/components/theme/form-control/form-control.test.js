@@ -1,7 +1,8 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import FormControl from './index';
 
-import styles from './form-control.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.formControl;
 
 /** @test {FormControl} */
 describe('FormControl component', function() {
@@ -16,7 +17,7 @@ describe('FormControl component', function() {
     });
 
     it('Should output a form control with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles['form-addon']));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes['form-addon']));
     });
   });
 });

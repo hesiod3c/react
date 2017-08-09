@@ -1,7 +1,8 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import FormGroup from './index';
 
-import styles from './form-group.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.formGroup;
 
 /** @test {FormGroup} */
 describe('FormGroup component', function() {
@@ -16,7 +17,7 @@ describe('FormGroup component', function() {
     });
 
     it('Should output a form group with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles['form-group']));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes['form-group']));
     });
   });
 });

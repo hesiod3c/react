@@ -1,4 +1,4 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import Svg from './index';
 
 /** @test {Svg} */

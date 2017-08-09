@@ -1,7 +1,8 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import Grid from './index';
 
-import styles from './grid.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.grid;
 
 /** @test {Grid} */
 describe('Grid component', function() {
@@ -16,7 +17,7 @@ describe('Grid component', function() {
     });
 
     it('Should output a grid with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles['container']));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes['container']));
     });
   });
 });

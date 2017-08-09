@@ -1,7 +1,8 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import HelpText from './index';
 
-import styles from './help-text.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.helpText;
 
 /** @test {HelpText} */
 describe('HelpText component', function() {
@@ -16,7 +17,7 @@ describe('HelpText component', function() {
     });
 
     it('Should output a help text with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles['help-text']));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes['help-text']));
     });
   });
 });

@@ -1,7 +1,8 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import ChoiceBox from './index';
 
-import styles from './choice-box.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.choiceBox;
 
 /** @test {ChoiceBox} */
 describe('ChoiceBox component', function() {
@@ -31,7 +32,7 @@ describe('ChoiceBox component', function() {
     });
 
     it('Should output a choice box with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles['choiceBox']));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes['choiceBox']));
     });
   });
 });

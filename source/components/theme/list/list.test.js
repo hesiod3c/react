@@ -1,7 +1,8 @@
-import '../../../../../internals/test/helper';
+import '../../../../internals/test/helper';
 import List from './index';
 
-import styles from './list.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.list;
 
 /** @test {List} */
 describe('List component', function() {
@@ -18,7 +19,7 @@ describe('List component', function() {
     });
 
     it('Should output a list with default style', () => {
-      assert.isOk(ReactDOM.findDOMNode(instance).className.match(styles.bordered));
+      assert.isOk(ReactDOM.findDOMNode(instance).className.match(classes.bordered));
     });
   });
 });
