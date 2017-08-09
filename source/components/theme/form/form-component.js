@@ -22,21 +22,25 @@ class Form extends PureComponent {
   /**
    * defaultProps
    * @property {Boolean} onSubmit
-   * @property {Style} style
+   * @property {String} style
+   * @property {String} className
    */
   static defaultProps = {
     onSubmit: false,
-    style: 'form'
+    style: 'form',
+    className: undefined
   };
 
   /**
    * propTypes
    * @property {Function} onSubmit
    * @property {String} style
+   * @property {String} className
    */
   static propTypes = {
     onSubmit: PropTypes.func,
-    style: PropTypes.oneOf(['form', 'horizontal', 'inline'])
+    style: PropTypes.oneOf(['form', 'horizontal', 'inline']),
+    className: PropTypes.string
   };
 
   /**

@@ -36,7 +36,12 @@ class ChoiceBox extends PureComponent {
     onToggle: () => {},
     onRemove: () => {},
     onInputChange: () => {},
-    create: true
+    create: true,
+    onDelete: () => {},
+    allowCreate: false,
+    allowDelete: false,
+    validationState: undefined,
+    errorMessage: undefined
   };
 
   /**
@@ -55,7 +60,12 @@ class ChoiceBox extends PureComponent {
     onToggle: PropTypes.func,
     onRemove: PropTypes.func,
     onInputChange: PropTypes.func,
-    create: PropTypes.bool
+    create: PropTypes.bool,
+    onDelete: PropTypes.func,
+    allowCreate: PropTypes.bool,
+    allowDelete: PropTypes.bool,
+    validationState: PropTypes.string,
+    errorMessage: PropTypes.string
   };
 
   /**

@@ -25,6 +25,7 @@ class Button extends PureComponent {
    * @property {String} size
    * @property {String} type
    * @property {Boolean} children
+   * @property {String} className
    */
   static defaultProps = {
     active: false,
@@ -37,7 +38,8 @@ class Button extends PureComponent {
     style: 'default',
     size: 'medium',
     type: 'button',
-    children: false
+    children: false,
+    className: undefined
   };
 
   /**
@@ -54,6 +56,7 @@ class Button extends PureComponent {
    * @property {String} type
    * @property {Function} onClick
    * @property {Object} children
+   * @property {String} className
    */
   static propTypes = {
     active: PropTypes.bool,
@@ -67,7 +70,8 @@ class Button extends PureComponent {
     style: PropTypes.oneOf(['default', 'primary', 'success', 'info', 'warning', 'danger', 'transparent']),
     size: PropTypes.oneOf(['mini', 'small','medium', 'large', 'none']),
     onClick: PropTypes.func,
-    children: PropTypes.any.isRequired
+    children: PropTypes.any.isRequired,
+    className: PropTypes.string
   };
 
   /**

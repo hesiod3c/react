@@ -60,6 +60,7 @@ class FormControl extends PureComponent {
    * @property {String} type
    */
   static propTypes = {
+    disabled: PropTypes.bool,
     getRef: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     onChange: PropTypes.func,
     onFocus: PropTypes.func,

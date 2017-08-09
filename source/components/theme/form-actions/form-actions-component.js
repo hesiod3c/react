@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import CSSModules from 'react-css-modules';
 //styles
@@ -11,6 +12,33 @@ const classes = styles.formActions;
  * @class
  */
 class FormActions extends PureComponent {
+  /**
+   * @constructor
+   * @param {Object} props
+   */
+  constructor(props){
+    super(props);
+  }
+  /**
+   * defaultProps
+   * @property {Node} children
+   * @property {String} className
+   */
+  static defaultProps = {
+    children: undefined,
+    className: undefined
+  };
+
+  /**
+   * propTypes
+   * @property {Node} children
+   * @property {String} className
+   */
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string
+  };
+
   /**
    * render
    * @return {ReactElement} markup

@@ -13,6 +13,25 @@ const classes = styles.breadcrumb;
  */
 class Breadcrumb extends PureComponent {
   /**
+   * defaultProps
+   * @property {Node} children
+   * @property {String} className
+   */
+  static defaultProps = {
+    children: undefined,
+    className: undefined
+  };
+
+  /**
+   * propTypes
+   * @property {Node} children
+   * @property {String} className
+   */
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string
+  };
+  /**
    * render
    * @return {ReactElement} markup
    */

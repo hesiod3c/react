@@ -57,7 +57,10 @@ class Pagination extends PureComponent {
     nextPageText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     lastPageText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     firstPageText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-    hideDisabled: PropTypes.bool
+    hideDisabled: PropTypes.bool,
+    itemChange: PropTypes.func,
+    activeClass: PropTypes.bool,
+    className: PropTypes.string
   };
 
   /**

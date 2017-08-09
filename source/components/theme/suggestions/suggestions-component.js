@@ -45,7 +45,13 @@ class Suggestions extends PureComponent {
    * @property {Boolean} children
    */
   static defaultProps = {
-    suggestions: []
+    suggestions: [],
+    query: undefined,
+    maxSuggestionsLength: undefined,
+    selectedIndex: undefined,
+    listboxId: undefined,
+    addTag: () => {},
+    expandable: false
   };
 
   /**
@@ -53,7 +59,13 @@ class Suggestions extends PureComponent {
    * @property {Array} options
    */
   static propTypes = {
-    suggestions: PropTypes.array.isRequired
+    suggestions: PropTypes.array.isRequired,
+    query: PropTypes.string,
+    maxSuggestionsLength: PropTypes.number,
+    selectedIndex: PropTypes.number,
+    listboxId: PropTypes.string,
+    addTag: PropTypes.func,
+    expandable: PropTypes.bool
   };
 
   componentWillReceiveProps (newProps) {
