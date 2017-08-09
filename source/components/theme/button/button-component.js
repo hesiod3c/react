@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 import classNames from 'classnames';
 //styles
-import data from '../../../interface';
-const styles = data.styles.button;
+import { styles } from '@descco/ui-core';
+const classes = styles.button;
 
 /**
  * Button Component
@@ -80,14 +80,14 @@ class Button extends PureComponent {
     const fullClassName = classNames(
       className,
       {
-        [`${styles[style]}`]: style,
-        [`${styles[size]}`]: size,
-        [`${styles.block}`]: block,
-        [`${styles.outline}`]: outline,
-        [`${styles.rounded}`]: rounded,
-        [`${styles.circle}`]: circle,
-        [`${styles.active}`]: active,
-        [`${styles.loading}`]: loading
+        [`${classes[style]}`]: style,
+        [`${classes[size]}`]: size,
+        [`${classes.block}`]: block,
+        [`${classes.outline}`]: outline,
+        [`${classes.rounded}`]: rounded,
+        [`${classes.circle}`]: circle,
+        [`${classes.active}`]: active,
+        [`${classes.loading}`]: loading
       });
 
     if (!children) {
@@ -111,4 +111,4 @@ class Button extends PureComponent {
 /**
  * @example <Button>Text</Button>
  */
-export default CSSModules(Button, styles);
+export default CSSModules(Button, classes);

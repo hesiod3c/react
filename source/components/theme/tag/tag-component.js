@@ -6,8 +6,8 @@ import classNames from 'classnames';
 import Button from '../button';
 import Icon from '../icon';
 //styles
-import data from '../../../interface';
-const styles = data.styles.tag;
+import { styles } from '@descco/ui-core';
+const classes = styles.tag;
 
 /**
  * Tag component
@@ -28,7 +28,11 @@ class Tag extends PureComponent {
    * @property {Boolean} children
    */
   static defaultProps = {
-    children: false
+    children: false,
+    key: undefined,
+    onRemove: () => {},
+    onClick: () => {},
+    className: undefined
   };
 
   /**
@@ -37,8 +41,14 @@ class Tag extends PureComponent {
    * @property {Object} children
    */
   static propTypes = {
+    children: PropTypes.any.isRequired,
+    key: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+    onRemove: PropTypes.func,
     onClick: PropTypes.func,
-    children: PropTypes.any.isRequired
+    className: PropTypes.string
   };
 
   /**
@@ -56,10 +66,10 @@ class Tag extends PureComponent {
       <div
         {...elementProps}
         key={key}
-        className={classNames(className, styles.tag)}
+        className={classNames(className, classes.tag)}
       >
         {children}
-        <span className={styles['tag-close']}>
+        <span className={classes['tag-close']}>
           <Button onClick={onRemove}>
             <Icon name="close" size="12px" />
           </Button>
@@ -72,6 +82,6 @@ class Tag extends PureComponent {
 /**
  * @example <Tag />
  */
-export default CSSModules(Tag, styles);
+export default CSSModules(Tag, classes);
 
 

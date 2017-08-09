@@ -10,8 +10,8 @@ import Button from '../../theme/button';
 import Icon from '../../theme/icon';
 import Suggestions from '../../theme/suggestions';
 // style
-import data from '../../../interface';
-const styles = data.styles.autosuggestWithTags;
+import { styles } from '@descco/ui-core';
+const classes = styles.autosuggestWithTags;
 
 /**
  * AutosuggestWithTags Component
@@ -105,13 +105,13 @@ class AutosuggestWithTags extends PureComponent {
     const keyDown = !options ? this.onInputKeyDown : undefined;
 
     return (
-      <div className={styles['autoSuggestWithTags']}>
+      <div className={classes['autoSuggestWithTags']}>
         <FormGroup
           validationState={validationState}
-          className={classNames(styles['autoSuggestWithTags-formGroup'], { [styles['autoSuggestWithTags-itemWithButton']]: !options })}
+          className={classNames(classes['autoSuggestWithTags-formGroup'], { [classes['autoSuggestWithTags-itemWithButton']]: !options })}
         >
           <FormControl
-            className={styles['autoSuggestWithTags-formControl']}
+            className={classes['autoSuggestWithTags-formControl']}
             placeholder={placeholder}
             onChange={this.onInputChange}
             onKeyDown={keyDown}
@@ -120,7 +120,7 @@ class AutosuggestWithTags extends PureComponent {
           />
           { !options &&
           <Button
-            className={styles['autoSuggestWithTags-itemWithButton-button']}
+            className={classes['autoSuggestWithTags-itemWithButton-button']}
             style="primary"
             onClick={this.onCreate}
           >
@@ -140,7 +140,7 @@ class AutosuggestWithTags extends PureComponent {
 
         { items.map((item, index) => {
           return (
-            <Tag key={index} className={styles['autoSuggestWithTags-tag']} onRemove={this.onRemove.bind(this, item)}>{item.name}</Tag>
+            <Tag key={index} className={classes['autoSuggestWithTags-tag']} onRemove={this.onRemove.bind(this, item)}>{item.name}</Tag>
           );
         })}
       </div>
@@ -151,4 +151,4 @@ class AutosuggestWithTags extends PureComponent {
 /**
  * @example <AutosuggestWithTags />
  */
-export default CSSModules(AutosuggestWithTags, styles);
+export default CSSModules(AutosuggestWithTags, classes);

@@ -11,8 +11,8 @@ import List from '../list';
 import Button from '../button';
 import Icon from '../icon';
 //styles
-import data from '../../../interface';
-const styles = data.styles.choiceBox;
+import { styles } from '@descco/ui-core';
+const classes = styles.choiceBox;
 
 /**
  * ChoiceBox Component
@@ -66,28 +66,28 @@ class ChoiceBox extends PureComponent {
     const { header, description, name, placeholder, onClick, options, tags, tagString, onToggle, onRemove, onDelete, onInputChange, allowCreate, allowDelete, validationState, errorMessage } = this.props;
 
     return (
-      <div className={styles['choiceBox']}>
-        <h3 className={styles['choiceBox-title']}>{header} {errorMessage &&  <span className={styles['errorMessage']}>{errorMessage}</span> }</h3>
-        <h4 className={styles['choiceBox-description']}>{description}</h4>
+      <div className={classes['choiceBox']}>
+        <h3 className={classes['choiceBox-title']}>{header} {errorMessage &&  <span className={classes['errorMessage']}>{errorMessage}</span> }</h3>
+        <h4 className={classes['choiceBox-description']}>{description}</h4>
 
-        <FormGroup  validationState={validationState} className={classNames({ [styles['choiceBox-itemWithButton']]: allowCreate })}>
-          <FormControl className={styles['choiceBox-formControl']} placeholder={placeholder} onChange={onInputChange} name={name} />
+        <FormGroup  validationState={validationState} className={classNames({ [classes['choiceBox-itemWithButton']]: allowCreate })}>
+          <FormControl className={classes['choiceBox-formControl']} placeholder={placeholder} onChange={onInputChange} name={name} />
           { allowCreate &&
-            <Button className={styles['choiceBox-itemWithButton-button']} style="primary" onClick={onClick}>
+            <Button className={classes['choiceBox-itemWithButton-button']} style="primary" onClick={onClick}>
               <Icon name="plus" size="20px"/>
             </Button>
           }
         </FormGroup>
 
-        <List className={styles['choiceBox-list']} style="bordered">
+        <List className={classes['choiceBox-list']} style="bordered">
           {options.map((item, index) => {
             return (
-              <List.Item key={index} className={classNames({ [styles['actived']] : item.checked })}>
-                <FormGroup className={styles['choiceBox-formGroup']} style={tagString ? 'radio' : 'checkbox'}>
+              <List.Item key={index} className={classNames({ [classes['actived']] : item.checked })}>
+                <FormGroup className={classes['choiceBox-formGroup']} style={tagString ? 'radio' : 'checkbox'}>
                   <FormControl type={tagString ? 'radio' : 'checkbox'}  name={tagString ? `choiceBox-${name}` : `choiceBox-${name}[]`} onChange={onToggle} checked={item.checked} value={item.slug} />
                   <FormLabel>{item.name}</FormLabel>
                   { allowDelete &&
-                    <Button style="transparent" className={styles['choiceBox-formGroup-button']} onClick={onDelete.bind(this, name, item.id)}>
+                    <Button style="transparent" className={classes['choiceBox-formGroup-button']} onClick={onDelete.bind(this, name, item.id)}>
                       <Icon name="trash" color="#999999" />
                     </Button>
                   }
@@ -99,7 +99,7 @@ class ChoiceBox extends PureComponent {
 
         {!tagString && tags && tags.map((item, index) => {
           return (
-            <Tag key={index} className={styles['choiceBox-tag']} onRemove={onRemove.bind(this, name, item)}>{item}</Tag>
+            <Tag key={index} className={classes['choiceBox-tag']} onRemove={onRemove.bind(this, name, item)}>{item}</Tag>
           );
         })}
 
@@ -114,6 +114,6 @@ class ChoiceBox extends PureComponent {
 /**
  * @example <ChoiceBox />
  */
-export default CSSModules(ChoiceBox, styles);
+export default CSSModules(ChoiceBox, classes);
 
 

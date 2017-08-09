@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import CSSModules from 'react-css-modules';
 //styles
-import data from '../../../interface';
-const styles = data.styles.footer;
+import { styles } from '@descco/ui-core';
+const classes = styles.footer;
 
 /**
  * Footer commponent
@@ -16,8 +16,8 @@ class Footer extends PureComponent {
    */
   render() {
     return (
-      <footer className={styles.footer}>
-        <strong className={styles['footer-highlight']}>Copyright</strong> B2W Digital &copy; { new Date().getFullYear() }
+      <footer className={classes.footer}>
+        <strong className={classes['footer-highlight']}>Copyright</strong> &copy; { new Date().getFullYear() }
       </footer>
     );
   }
@@ -26,4 +26,4 @@ class Footer extends PureComponent {
 /**
  * @example <Footer />
  */
-export default CSSModules(Footer, styles);
+export default CSSModules(Footer, classes);

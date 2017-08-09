@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import CSSModules from 'react-css-modules';
 //styles
-import data from '../../../interface';
-const styles = data.styles.breadcrumb;
+import { styles } from '@descco/ui-core';
+const classes = styles.breadcrumb;
 
 /**
  * Breadcrumb component
@@ -22,7 +22,7 @@ class Breadcrumb extends PureComponent {
     return (
       <ol
         {...elementProps}
-        className={classNames(className, styles['breadcrumb-list'])}>
+        className={classNames(className, classes['breadcrumb-list'])}>
         {children}
       </ol>
     );
@@ -65,12 +65,12 @@ class BreadcrumbItem extends PureComponent {
     return (
       <li
         {...elementProps}
-        className={styles['breadcrumb-item']}>
+        className={classes['breadcrumb-item']}>
         {url
           ?
-          <a href={url} className={styles['breadcrumb-link']}>{text}</a>
+          <a href={url} className={classes['breadcrumb-link']}>{text}</a>
           :
-          <strong className={styles['breadcrumb-text']}>{text}</strong>
+          <strong className={classes['breadcrumb-text']}>{text}</strong>
         }
       </li>
     );
@@ -85,4 +85,4 @@ Breadcrumb.Item = BreadcrumbItem;
 /**
  * @example <Breadcrumb />
  */
-export default CSSModules(Breadcrumb, styles);
+export default CSSModules(Breadcrumb, classes);

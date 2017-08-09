@@ -6,8 +6,8 @@ import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 import Alert from '../../theme/alert';
 //styles
-import data from '../../../interface';
-const styles = data.styles.notifierManager;
+import { styles } from '@descco/ui-core';
+const classes = styles.notifierManager;
 
 /**
  * Notifier component
@@ -73,13 +73,13 @@ class Notifier extends PureComponent {
     const { position, alerts, onDismiss, timeout, ...elementProps } = this.props;
 
     const fullClassName = classNames(
-      styles.container, {
-        [styles[position]]: position,
+      classes.container, {
+        [classes[position]]: position,
       });
 
     return (
       <div className={fullClassName}>
-        <ReactCSSTransitionGroup transitionName={styles} transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+        <ReactCSSTransitionGroup transitionName={classes} transitionEnterTimeout={500} transitionLeaveTimeout={300}>
           {alerts && alerts.map(item => {
             const dismiss = onDismiss ? () => onDismiss(item) : null;
             const { message, ...alertProps } = item;
@@ -107,4 +107,4 @@ class Notifier extends PureComponent {
 /**
  * @example <Notifier />
  */
-export default CSSModules(Notifier, styles);
+export default CSSModules(Notifier, classes);

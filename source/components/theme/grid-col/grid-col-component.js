@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 import classNames from 'classnames';
 //styles
-import data from '../../../interface';
-const styles = data.styles.gridCol;
+import { styles } from '@descco/ui-core';
+const classes = styles.gridCol;
 
 /**
  * GridCol component
@@ -46,17 +46,17 @@ class GridCol extends PureComponent {
     const {xs, sm, md, lg, xsOffset, smOffset, mdOffset, lgOffset, reverse, children, ...elementProps} = this.props;
 
     const fullClass = classNames(
-      styles['col'],
+      classes['col'],
       {
-        [styles[`col-xs-${xs}`]]: xs,
-        [styles[`col-sm-${sm}`]]: sm,
-        [styles[`col-md-${md}`]]: md,
-        [styles[`col-lg-${lg}`]]: lg,
-        [styles[`col-xs-offset-${xsOffset}`]]: xsOffset,
-        [styles[`col-sm-offset-${smOffset}`]]: smOffset,
-        [styles[`col-md-offset-${mdOffset}`]]: mdOffset,
-        [styles[`col-lg-offset-${lgOffset}`]]: lgOffset,
-        [styles['reverse']]: reverse
+        [classes[`col-xs-${xs}`]]: xs,
+        [classes[`col-sm-${sm}`]]: sm,
+        [classes[`col-md-${md}`]]: md,
+        [classes[`col-lg-${lg}`]]: lg,
+        [classes[`col-xs-offset-${xsOffset}`]]: xsOffset,
+        [classes[`col-sm-offset-${smOffset}`]]: smOffset,
+        [classes[`col-md-offset-${mdOffset}`]]: mdOffset,
+        [classes[`col-lg-offset-${lgOffset}`]]: lgOffset,
+        [classes['reverse']]: reverse
       });
 
     return (
@@ -73,6 +73,6 @@ class GridCol extends PureComponent {
 /**
  * @example <GridCol />
  */
-export default CSSModules(GridCol, styles);
+export default CSSModules(GridCol, classes);
 
 

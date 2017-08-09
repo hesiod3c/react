@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import classNames from 'classnames';
 import CSSModules from 'react-css-modules';
 //styles
-import data from '../../../interface';
-const styles = data.styles.formActions;
+import { styles } from '@descco/ui-core';
+const classes = styles.formActions;
 
 /**
  * Form Actions component
@@ -20,7 +20,7 @@ class FormActions extends PureComponent {
 
     const fullClassName = classNames(
       className,
-      styles['form-group-actions']
+      classes['form-group-actions']
     );
 
     return (
@@ -36,4 +36,4 @@ class FormActions extends PureComponent {
 /**
  * @example <FormActions></FormActions>
  */
-export default CSSModules(FormActions, styles);
+export default CSSModules(FormActions, classes);

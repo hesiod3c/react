@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import CSSModules from 'react-css-modules';
 //styles
-import data from '../../../interface';
-const styles = data.styles.panel;
+import { styles } from '@descco/ui-core';
+const classes = styles.panel;
 
 /**
  * Panel component
@@ -19,13 +19,15 @@ class Panel extends PureComponent {
    * @property {String} footer
    * @property {String} footerAddon
    * @property {Node} children
+   * @property {String} className
    */
   static defaultProps = {
     scroll: false,
     header: undefined,
     footer: undefined,
     footerAddon: undefined,
-    children: undefined
+    children: undefined,
+    className: undefined
   };
 
   /**
@@ -35,13 +37,15 @@ class Panel extends PureComponent {
    * @property {String} footer
    * @property {String} footerAddon
    * @property {Node} children
+   * @property {String} className
    */
   static propTypes = {
     scroll: PropTypes.bool,
     header: PropTypes.string,
     footer: PropTypes.string,
     footerAddon: PropTypes.string,
-    children: PropTypes.node
+    children: PropTypes.node,
+    className: PropTypes.string
   };
 
   /**
@@ -53,7 +57,7 @@ class Panel extends PureComponent {
 
     const fullClassName = classNames(
       className,
-      styles.panel
+      classes.panel
     );
 
     if (!children){
@@ -63,21 +67,21 @@ class Panel extends PureComponent {
     return (
       <section className={fullClassName}>
         {header &&
-          <header className={styles['panel-header']}>
+          <header className={classes['panel-header']}>
             <h3>{header}</h3>
           </header>
         }
         {children &&
-          <div className={classNames(styles['panel-content'], { [styles['panel-content--scroll']]: scroll})}
+          <div className={classNames(classes['panel-content'], { [classes['panel-content--scroll']]: scroll})}
             {...elementProps}
           >
             {children}
           </div>
         }
         {footer &&
-          <footer className={styles['panel-footer']}>
-            <span className={styles['panel-footer-info']}>{footer}</span>
-            <span className={styles['panel-footer-addon']}>{footerAddon}</span>
+          <footer className={classes['panel-footer']}>
+            <span className={classes['panel-footer-info']}>{footer}</span>
+            <span className={classes['panel-footer-addon']}>{footerAddon}</span>
           </footer>
         }
       </section>
@@ -89,4 +93,4 @@ class Panel extends PureComponent {
 /**
  * @example <Panel />
  */
-export default CSSModules(Panel, styles);
+export default CSSModules(Panel, classes);

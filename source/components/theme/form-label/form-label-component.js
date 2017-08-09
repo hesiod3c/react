@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import CSSModules from 'react-css-modules';
 //styles
-import data from '../../../interface';
-const styles = data.styles.formLabel;
+import { styles } from '@descco/ui-core';
+const classes = styles.formLabel;
 
 /**
  * Form Label component
@@ -23,19 +23,25 @@ class FormLabel extends PureComponent {
   /**
    * defaultProps
    * @property {Boolean} addon
+   * @property {Node} children
+   * @property {String} className
    */
   static defaultProps = {
-    addon: undefined
+    addon: undefined,
+    children: undefined,
+    className: undefined
   };
 
   /**
    * propTypes
    * @property {Node} addon
    * @property {Node} children
+   * @property {String} className
    */
   static propTypes = {
     addon: PropTypes.node,
-    children: PropTypes.node
+    children: PropTypes.node,
+    className: PropTypes.string
   };
 
   /**
@@ -55,7 +61,7 @@ class FormLabel extends PureComponent {
 
     const fullClassName = classNames(
       className,
-      styles.label
+      classes.label
     );
 
     // context
@@ -73,7 +79,7 @@ class FormLabel extends PureComponent {
         htmlFor={controlId}>
         {children}
         { addon &&
-        <span className={styles['label-addon']}>{addon}</span>
+        <span className={classes['label-addon']}>{addon}</span>
         }
       </label>
     );
@@ -83,4 +89,4 @@ class FormLabel extends PureComponent {
 /**
  * @example <FormLabel></FormLabel>
  */
-export default CSSModules(FormLabel, styles);
+export default CSSModules(FormLabel, classes);

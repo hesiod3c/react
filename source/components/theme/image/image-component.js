@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import CSSModules from 'react-css-modules';
 //styles
-import data from '../../../interface';
-const styles = data.styles.image;
+import { styles } from '@descco/ui-core';
+const classes = styles.image;
 
 /**
  * Image Component
@@ -20,6 +20,7 @@ class Image extends PureComponent {
    * @property {String} size
    * @property {String} align
    * @property {Boolean} path
+   * @property {String} className
    */
   static defaultProps = {
     rounded: false,
@@ -27,7 +28,8 @@ class Image extends PureComponent {
     thumbnail: false,
     size: 'medium',
     align: 'left',
-    path: false
+    path: false,
+    className: undefined
   };
 
   /**
@@ -38,6 +40,7 @@ class Image extends PureComponent {
    * @property {String} size
    * @property {String} align
    * @property {String} path
+   * @property {String} className
    */
   static propTypes = {
     rounded: PropTypes.bool,
@@ -45,7 +48,8 @@ class Image extends PureComponent {
     thumbnail: PropTypes.bool,
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     align: PropTypes.oneOf(['left', 'center', 'right']),
-    path: PropTypes.string.isRequired
+    path: PropTypes.string.isRequired,
+    className: PropTypes.string
   };
 
   /**
@@ -58,10 +62,10 @@ class Image extends PureComponent {
     const fullClassName = classNames(
       className,
       {
-        [styles[size]]: size,
-        [styles.rounded]: rounded,
-        [styles.circle]: circle,
-        [styles.thumbnail]: thumbnail
+        [classes[size]]: size,
+        [classes.rounded]: rounded,
+        [classes.circle]: circle,
+        [classes.thumbnail]: thumbnail
       });
 
     if(!path || path === '') {
@@ -69,7 +73,7 @@ class Image extends PureComponent {
     }
 
     return (
-      <figure className={styles[align]}>
+      <figure className={classes[align]}>
         <img
           {...elementProps}
           src={path}
@@ -84,4 +88,4 @@ class Image extends PureComponent {
 /**
  * @example <Image />
  */
-export default CSSModules(Image, styles);
+export default CSSModules(Image, classes);

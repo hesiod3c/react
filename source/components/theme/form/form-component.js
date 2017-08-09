@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import CSSModules from 'react-css-modules';
 //styles
-import data from '../../../interface';
-const styles = data.styles.form;
+import { styles } from '@descco/ui-core';
+const classes = styles.form;
 
 /**
  * Form
@@ -51,7 +51,7 @@ class Form extends PureComponent {
         {...elementProps}
         ref={c => { this.form = c; }}
         onSubmit={onSubmit}
-        className={classNames(className, styles[style])}
+        className={classNames(className, classes[style])}
       >
       </form>
     );
@@ -61,4 +61,4 @@ class Form extends PureComponent {
 /**
  * @example <Form onSubmit={ ()=>{} } />
  */
-export default CSSModules(Form, styles);
+export default CSSModules(Form, classes);

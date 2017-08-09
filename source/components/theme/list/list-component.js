@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import CSSModules from 'react-css-modules';
 //styles
-import data from '../../../interface';
-const styles = data.styles.list;
+import { styles } from '@descco/ui-core';
+const classes = styles.list;
 
 /**
  * List Component
@@ -14,26 +14,34 @@ const styles = data.styles.list;
 class List extends PureComponent {
   /**
    * defaultProps
-   * @property {String} style
+   * @property {Node} children
    * @property {Boolean} bordered
    * @property {Boolean} zebra
+   * @property {String} style
+   * @property {String} className
    */
   static defaultProps = {
-    style: 'bordered',
+    children: undefined,
     bordered: false,
-    zebra: false
+    zebra: false,
+    style: 'bordered',
+    className: undefined
   };
 
   /**
    * propTypes
-   * @property {String} style
+   * @property {Node} children
    * @property {Boolean} bordered
    * @property {Boolean} zebra
+   * @property {String} style
+   * @property {String} className
    */
   static propTypes = {
+    children: PropTypes.node,
     bordered: PropTypes.bool,
     zebra: PropTypes.bool,
-    style: PropTypes.oneOf(['unstyled', 'decimal', 'disc', 'circle', 'zebra', 'bordered'])
+    style: PropTypes.oneOf(['unstyled', 'decimal', 'disc', 'circle', 'zebra', 'bordered']),
+    className: PropTypes.string
   };
 
   /**
@@ -46,9 +54,9 @@ class List extends PureComponent {
     const fullClassName = classNames(
       className,
       {
-        [styles[style]]: style,
-        [styles[bordered]]: bordered,
-        [styles[zebra]]: zebra
+        [classes[style]]: style,
+        [classes[bordered]]: bordered,
+        [classes[zebra]]: zebra
       }
     );
 
@@ -69,6 +77,25 @@ class List extends PureComponent {
  */
 class ListItem extends PureComponent {
   /**
+   * defaultProps
+   * @property {Node} children
+   * @property {String} className
+   */
+  static defaultProps = {
+    children: undefined,
+    className: undefined
+  };
+
+  /**
+   * propTypes
+   * @property {Node} children
+   * @property {String} className
+   */
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string
+  };
+  /**
    * render
    * @return {ReactElement} markup
    */
@@ -78,7 +105,7 @@ class ListItem extends PureComponent {
     return (
       <li
         {...elementProps}
-        className={classNames(styles['list-item'], className)}>
+        className={classNames(classes['list-item'], className)}>
         {children}
       </li>
     );
@@ -90,4 +117,4 @@ List.Item = ListItem;
 /**
  * @example <List><List.Item>text</List.Item></List>
  */
-export default CSSModules(List, styles);
+export default CSSModules(List, classes);

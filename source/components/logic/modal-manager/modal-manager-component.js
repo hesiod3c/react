@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 import Modal from '../../theme/modal';
 //styles
-import data from '../../../interface';
-const styles = data.styles.modalManager;
+import { styles } from '@descco/ui-core';
+const classes = styles.modalManager;
 
 /**
  * ModalManager Component
@@ -58,4 +58,4 @@ class ModalManager extends PureComponent {
 /**
  * @example <ModalManager />
  */
-export default CSSModules(ModalManager, styles);
+export default CSSModules(ModalManager, classes);

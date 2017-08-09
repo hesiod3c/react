@@ -4,8 +4,8 @@ import paginator from 'paginator';
 import classNames from 'classnames';
 import CSSModules from 'react-css-modules';
 //styles
-import data from '../../../interface';
-const styles = data.styles.pagination;
+import { styles } from '@descco/ui-core';
+const classes = styles.pagination;
 
 /**
  * Pagination component
@@ -137,7 +137,7 @@ class Pagination extends PureComponent {
     const pages = this.buildPages();
 
     return (
-      <ul className={classNames(className, styles.pagination)}>{pages}</ul>
+      <ul className={classNames(className, classes.pagination)}>{pages}</ul>
     );
   }
 }
@@ -201,16 +201,16 @@ class PaginationItem extends PureComponent {
     const { pageText, isActive, isDisabled } = this.props;
 
     const fullClass = classNames(
-      styles['pagination-item'],
+      classes['pagination-item'],
       {
-        [styles.active]: isActive,
-        [styles.disabled]: isDisabled
+        [classes.active]: isActive,
+        [classes.disabled]: isDisabled
       }
     );
 
     return (
       <li className={fullClass} onClick={::this.handleClick}>
-        <a className={styles['pagination-link']} href="#">
+        <a className={classes['pagination-link']} href="#">
           { pageText }
         </a>
       </li>
@@ -223,4 +223,4 @@ Pagination.Item = PaginationItem;
 /**
  * @example <Pagination />
  */
-export default CSSModules(Pagination, styles);
+export default CSSModules(Pagination, classes);

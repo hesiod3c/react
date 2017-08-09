@@ -1,8 +1,8 @@
 import React, { PureComponent, PropTypes } from 'react';
 import CSSModules from 'react-css-modules';
 //styles
-import data from '../../../interface';
-const styles = data.styles.progressBar;
+import { styles } from '@descco/ui-core';
+const classes = styles.progressBar;
 
 /**
  * ProgressBar component
@@ -150,8 +150,8 @@ class ProgressBar extends PureComponent {
     }
 
     return (
-      <div style={style} className={styles.progressBar}>
-        <svg x="0" y="0" width="30.029" height="17.16" viewBox="0 0 60 34.286" style={rocketStyle} className={styles.rocket}>
+      <div style={style} className={classes.progressBar}>
+        <svg x="0" y="0" width="30.029" height="17.16" viewBox="0 0 60 34.286" style={rocketStyle} className={classes.rocket}>
           <g>
             <g>
               <polygon fill="#1a7563" points="5.458,23.233 3.01,21.587 3.01,12.479 5.458,11.656"/>
@@ -170,4 +170,4 @@ class ProgressBar extends PureComponent {
 /**
  * @example <ProgressBar />
  */
-export default CSSModules(ProgressBar, styles);
+export default CSSModules(ProgressBar, classes);

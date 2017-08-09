@@ -7,7 +7,7 @@ import Button from '../button';
 import Icon from '../icon';
 //styles
 import { styles } from '@descco/ui-core';
-const style = styles.alert;
+const classes = styles.alert;
 
 /**
  * Alert component
@@ -93,10 +93,10 @@ class Alert extends PureComponent {
   render(){
     const { onDismiss, children, type, headline, dismissTitle, showIcon, dark } = this.props;
     const fullClassName = classNames({
-      [style.dismissable]: onDismiss,
-      [style[type]]: type,
-      [style['alert--dark']]: dark,
-      [style['alert--icon']]: showIcon
+      [classes.dismissable]: onDismiss,
+      [classes[type]]: type,
+      [classes['alert--dark']]: dark,
+      [classes['alert--icon']]: showIcon
     });
     const icon = this.getIcon(type);
 
@@ -107,17 +107,17 @@ class Alert extends PureComponent {
     return (
       <div className={fullClassName}>
         {onDismiss &&
-        <Button style="transparent" size="none" className={style.close} title={dismissTitle} onClick={onDismiss}>
+        <Button style="transparent" size="none" className={classes.close} title={dismissTitle} onClick={onDismiss}>
           <Icon name="close" />
         </Button>
         }
 
         {showIcon &&
-        <Icon className={style.icon} name={icon} size="30px" />
+        <Icon className={classes.icon} name={icon} size="30px" />
         }
-        <div className={style.msgContainer}>
-          {headline ? <h4 className={style.headline}>{headline}</h4> : null}
-          <div className={style.body}>
+        <div className={classes.msgContainer}>
+          {headline ? <h4 className={classes.headline}>{headline}</h4> : null}
+          <div className={classes.body}>
             {children}
           </div>
         </div>
@@ -129,4 +129,4 @@ class Alert extends PureComponent {
 /**
  * @example <Alert />
  */
-export default CSSModules(Alert, style);
+export default CSSModules(Alert, classes);

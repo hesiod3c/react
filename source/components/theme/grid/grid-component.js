@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 import classNames from 'classnames';
 //styles
-import data from '../../../interface';
-const styles = data.styles.grid;
+import { styles } from '@descco/ui-core';
+const classes = styles.grid;
 
 /**
  * Grid component
@@ -38,8 +38,8 @@ class Grid extends PureComponent {
     const {fluid, ...elementProps} = this.props;
 
     const classes = classNames({
-      [styles['container-fluid']]: fluid,
-      [styles['container']]: !fluid,
+      [classes['container-fluid']]: fluid,
+      [classes['container']]: !fluid,
     });
 
     return (
@@ -56,6 +56,6 @@ class Grid extends PureComponent {
 /**
  * @example <Grid />
  */
-export default CSSModules(Grid, styles);
+export default CSSModules(Grid, classes);
 
 

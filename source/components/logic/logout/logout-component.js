@@ -5,8 +5,8 @@ import Icon from  '../../theme/icon';
 import ModalManager from '../modal-manager';
 
 //styles
-import data from '../../../interface';
-const styles = data.styles.logout;
+import { styles } from '@descco/ui-core';
+const classes = styles.logout;
 
 /**
  * Logout Component

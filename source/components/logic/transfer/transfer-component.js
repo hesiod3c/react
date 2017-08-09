@@ -7,8 +7,8 @@ import List from '../../theme/list';
 import Icon from '../../theme/icon';
 import Button from '../../theme/button';
 //styles
-import data from '../../../interface';
-const styles = data.styles.transfer;
+import { styles } from '@descco/ui-core';
+const classes = styles.transfer;
 
 /**
  * Transfer Component
@@ -99,16 +99,16 @@ class Transfer extends PureComponent {
     const { list, filteredList, addItems, removeItems } = this.props[this.props.reducerName] || { list: [], filteredList: [], addItems: [], removeItems: [] };
 
     return (
-      <div className={styles.transfer}>
-        <div className={styles['transfer-box']}>
-          <h3 className={styles['transfer-title']}>{ this.props.listTitle }</h3>
-          <List className={styles['transfer-list']} style="bordered">
+      <div className={classes.transfer}>
+        <div className={classes['transfer-box']}>
+          <h3 className={classes['transfer-title']}>{ this.props.listTitle }</h3>
+          <List className={classes['transfer-list']} style="bordered">
             { list.map((item, index) => {
               return (
                 <List.Item
                   key={index}
                   onClick={this.selectItem.bind(this, item, 'add')}
-                  className={classNames( styles['transfer-item'], { [styles.on]: item.selected })}
+                  className={classNames( classes['transfer-item'], { [classes.on]: item.selected })}
                 >
                   { item.label }
                 </List.Item>
@@ -118,12 +118,12 @@ class Transfer extends PureComponent {
           </List>
         </div>
 
-        <div className={styles['transfer-operator']}>
+        <div className={classes['transfer-operator']}>
           <div>
             <Button
               onClick={this.addItem}
               disabled={addItems.length === 0}
-              className={styles['transfer-operator-button']}
+              className={classes['transfer-operator-button']}
               style="primary"
             >
               <Icon name="arrow-right" />
@@ -133,7 +133,7 @@ class Transfer extends PureComponent {
             <Button
               onClick={this.removeItem}
               disabled={removeItems.length === 0}
-              className={styles['transfer-operator-button']}
+              className={classes['transfer-operator-button']}
               style="primary"
             >
               <Icon name="arrow-left" />
@@ -141,15 +141,15 @@ class Transfer extends PureComponent {
           </div>
         </div>
 
-        <div className={styles['transfer-box']}>
-          <h3 className={styles['transfer-title']}>{ this.props.filteredListTitle }</h3>
-          <List className={styles['transfer-list']} style="bordered">
+        <div className={classes['transfer-box']}>
+          <h3 className={classes['transfer-title']}>{ this.props.filteredListTitle }</h3>
+          <List className={classes['transfer-list']} style="bordered">
             { filteredList.map((item, index) => {
               return (
                 <List.Item
                   key={index}
                   onClick={this.selectItem.bind(this, item, 'remove')}
-                  className={classNames( styles['transfer-item'], { [styles.on]: item.selected })}
+                  className={classNames( classes['transfer-item'], { [classes.on]: item.selected })}
                 >
                   { item.label }
                 </List.Item>
@@ -166,6 +166,6 @@ class Transfer extends PureComponent {
 /**
  * @example <Transfer />
  */
-export default CSSModules(Transfer, styles);
+export default CSSModules(Transfer, classes);
 
 

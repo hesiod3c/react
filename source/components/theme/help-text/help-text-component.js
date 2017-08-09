@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import CSSModules from 'react-css-modules';
 //styles
-import data from '../../../interface';
-const styles = data.styles.helpText;
+import { styles } from '@descco/ui-core';
+const classes = styles.helpText;
 
 /**
  * HelpText
@@ -15,17 +15,21 @@ class HelpText extends PureComponent {
   /**
    * defaultProps
    * @property {Boolean} children
+   * @property {String} className
    */
   static defaultProps = {
-    children: false
+    children: false,
+    className: undefined
   };
 
   /**
    * propTypes
    * @property {String} children
+   * @property {String} className
    */
   static propTypes = {
-    children: PropTypes.string.isRequired
+    children: PropTypes.string.isRequired,
+    className: PropTypes.string
   };
 
   /**
@@ -42,7 +46,7 @@ class HelpText extends PureComponent {
     return (
       <span
         {...elementProps}
-        className={classNames(className, styles['help-text'])}
+        className={classNames(className, classes['help-text'])}
       >
         { children }
       </span>
@@ -53,4 +57,4 @@ class HelpText extends PureComponent {
 /**
  * @example <HelpText>Text</HelpText>
  */
-export default CSSModules(HelpText, styles);
+export default CSSModules(HelpText, classes);

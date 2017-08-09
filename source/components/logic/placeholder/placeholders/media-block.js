@@ -5,7 +5,8 @@ import CSSModules from 'react-css-modules';
 import TextBlock from './text-block';
 import RoundShape from './round-shape';
 // style
-import styles from '../../../../../scss/06-components/placeholder.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.placeholder;
 
 class MediaBlock extends PureComponent {
   /**
@@ -26,12 +27,12 @@ class MediaBlock extends PureComponent {
    */
   render() {
     const { className, style, rows } = this.props;
-    const classes = [styles.media, className].filter(c => c).join(' ');
+    const fullClass = [classes.media, className].filter(c => c).join(' ');
 
     return (
-      <div className={classes} style={{ ...style }}>
+      <div className={fullClass} style={{ ...style }}>
         <RoundShape
-          className={styles['media-round']}
+          className={classes['media-round']}
         />
         <TextBlock rows={rows} />
       </div>
@@ -40,4 +41,4 @@ class MediaBlock extends PureComponent {
 
 }
 
-export default CSSModules(MediaBlock, styles);
+export default CSSModules(MediaBlock, classes);

@@ -2,7 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 // style
-import styles from '../../../../../scss/06-components/placeholder.scss';
+import { styles } from '@descco/ui-core';
+const classes = styles.placeholder;
 
 import TextRow from './text-row';
 
@@ -65,10 +66,10 @@ class TextBlock extends PureComponent {
   render() {
     const { style, className } = this.props;
 
-    const classes = [styles.textBlock, className].filter(c => c).join(' ');
+    const fullClass = [classes.textBlock, className].filter(c => c).join(' ');
 
     return (
-      <div className={classes} style={{ ...style }}>
+      <div className={fullClass} style={{ ...style }}>
         {this.getRows()}
       </div>
     );
@@ -76,4 +77,4 @@ class TextBlock extends PureComponent {
 
 }
 
-export default CSSModules(TextBlock, styles);
+export default CSSModules(TextBlock, classes);

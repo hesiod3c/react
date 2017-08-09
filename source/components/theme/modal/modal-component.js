@@ -6,8 +6,8 @@ import CSSModules from 'react-css-modules';
 import Button from '../button';
 import Icon from '../icon';
 //styles
-import data from '../../../interface';
-const styles = data.styles.modal;
+import { styles } from '@descco/ui-core';
+const classes = styles.modal;
 
 /**
  * Modal Component
@@ -20,7 +20,10 @@ class Modal extends PureComponent {
    * @property {String} effect
    */
   static defaultProps = {
-    effect: 'scaleUp'
+    effect: 'scaleUp',
+    onDismiss: () => {},
+    data: {},
+    key: undefined
   };
 
   /**
@@ -30,7 +33,12 @@ class Modal extends PureComponent {
    */
   static propTypes = {
     effect: PropTypes.oneOf(['scaleUp', 'slideFromRight', 'slideFromBottom', 'newspaper', 'fall', 'sideFall', 'flipHorizontalThreeD', 'flipVerticalThreeD', 'signThreeD', 'superScaled', 'rotateFromBottomThreeD', 'rotateFromLeftThreeD']),
-    onDismiss: PropTypes.func
+    onDismiss: PropTypes.func,
+    data: PropTypes.object,
+    key: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ])
   };
 
   render() {
@@ -45,28 +53,28 @@ class Modal extends PureComponent {
     return (
       <div
         ref="overlay"
-        className={styles.overlay}
+        className={classes.overlay}
         key={key}
       >
         <div
           ref="content"
-          className={classNames(styles.content, styles[effect])}
+          className={classNames(classes.content, classes[effect])}
           style={ {maxWidth: maxWidth}}
         >
           <div>
             { data.header &&
-            <header className={styles.header}>
-              <h3 className={styles['header-title']}>{data.header}</h3>
+            <header className={classes.header}>
+              <h3 className={classes['header-title']}>{data.header}</h3>
               <Button onClick={() => onDismiss(data)}>
                 <Icon name="close" />
               </Button>
             </header>
             }
-            <div className={styles.body}>
+            <div className={classes.body}>
               {data.body}
             </div>
             {data.footer &&
-            <footer className={styles.footer}>
+            <footer className={classes.footer}>
               <Button onClick={() => onDismiss(data)}>Fechar</Button>
               {data.actionButton}
             </footer>
@@ -81,4 +89,4 @@ class Modal extends PureComponent {
 /**
  * @example <Modal />
  */
-export default CSSModules(Modal, styles);
+export default CSSModules(Modal, classes);

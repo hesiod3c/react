@@ -6,8 +6,8 @@ import FormGroup from '../../theme/form-group';
 import FormControl from '../../theme/form-control';
 import Tag from '../../theme/tag';
 //styles
-import data from '../../../interface';
-const styles = data.styles.selectWithTags;
+import { styles } from '@descco/ui-core';
+const classes = styles.selectWithTags;
 
 /**
  * SelectWithTags Component
@@ -76,14 +76,14 @@ class SelectWithTags extends PureComponent {
     const { items, item } = this.props[reducerName] || { items: [], item: '' };
 
     return (
-      <div className={styles['selectWithTags']}>
+      <div className={classes['selectWithTags']}>
         <FormGroup
           validationState={validationState}
-          className={styles['selectWithTags-formGroup']}
+          className={classes['selectWithTags-formGroup']}
         >
           <FormControl
             type="select"
-            className={styles['selectWithTags-formControl']}
+            className={classes['selectWithTags-formControl']}
             placeholder={placeholder}
             onChange={this.onAdd}
             name={name}
@@ -102,7 +102,7 @@ class SelectWithTags extends PureComponent {
           return (
             <Tag
               key={index}
-              className={styles['selectWithTags-tag']}
+              className={classes['selectWithTags-tag']}
               onRemove={this.onRemove.bind(this, item)}
             >
               {item.label}
@@ -117,4 +117,4 @@ class SelectWithTags extends PureComponent {
 /**
  * @example <SelectWithTags />
  */
-export default CSSModules(SelectWithTags, styles);
+export default CSSModules(SelectWithTags, classes);

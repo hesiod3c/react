@@ -2,10 +2,10 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import CSSModules from 'react-css-modules';
-import { randomId } from '../../../utils/property';
 //styles
-import data from '../../../interface';
-const styles = data.styles.formGroup;
+import { styles, utils } from '@descco/ui-core';
+const classes = styles.formGroup;
+const randomId = utils.property.randomId;
 
 /**
  * Form Group component
@@ -75,12 +75,12 @@ class FormGroup extends PureComponent {
 
     const formGroupClass = classNames(
       className,
-      styles['form-group'],
+      classes['form-group'],
       {
-        [styles[validationStateClass]]: validationState,
-        [styles['form-group--checkbox']]: style === 'checkbox',
-        [styles['form-group--radio']]: style === 'radio',
-        [styles['form-group--withoutTopLabel']]: withoutTopLabel
+        [classes[validationStateClass]]: validationState,
+        [classes['form-group--checkbox']]: style === 'checkbox',
+        [classes['form-group--radio']]: style === 'radio',
+        [classes['form-group--withoutTopLabel']]: withoutTopLabel
       }
     );
 
@@ -97,4 +97,4 @@ class FormGroup extends PureComponent {
 /**
  * @example <FormGroup></FormGroup>
  */
-export default CSSModules(FormGroup, styles);
+export default CSSModules(FormGroup, classes);

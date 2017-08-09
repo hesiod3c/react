@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 import classNames from 'classnames';
 //styles
-import data from '../../../interface';
-const styles = data.styles.suggestions;
+import { styles } from '@descco/ui-core';
+const classes = styles.suggestions;
 
 function markIt (input, query) {
   const escaped = query.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -69,8 +69,8 @@ class Suggestions extends PureComponent {
     const key = `${this.props.listboxId}-${index}`;
 
     const fullClass = classNames({
-      [styles['is-active']]: this.props.selectedIndex === index,
-      [styles['is-disabled']]: item.disabled
+      [classes['is-active']]: this.props.selectedIndex === index,
+      [classes['is-disabled']]: item.disabled
     });
 
     return (
@@ -100,8 +100,8 @@ class Suggestions extends PureComponent {
     let items = this.state.options.map(this._generateOptions);
 
     return (
-      <div className={styles.suggestions}>
-        <ul className={styles['suggestions-list']} role='listbox' id={this.props.listboxId}>{items}</ul>
+      <div className={classes.suggestions}>
+        <ul className={classes['suggestions-list']} role='listbox' id={this.props.listboxId}>{items}</ul>
       </div>
     );
   }
@@ -110,6 +110,6 @@ class Suggestions extends PureComponent {
 /**
  * @example <Suggestions />
  */
-export default CSSModules(Suggestions, styles);
+export default CSSModules(Suggestions, classes);
 
 

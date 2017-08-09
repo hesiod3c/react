@@ -5,8 +5,8 @@ import CSSModules from 'react-css-modules';
 // components
 import Icon from '../icon';
 //styles
-import data from '../../../interface';
-const styles = data.styles.formControl;
+import { styles } from '@descco/ui-core';
+const classes = styles.formControl;
 
 /**
  * Form Control component
@@ -108,7 +108,7 @@ class FormControl extends PureComponent {
     }
 
     return (
-      <span className={styles[`form-addon-${type}`]}>{children}</span>
+      <span className={classes[`form-addon-${type}`]}>{children}</span>
     );
   }
 
@@ -135,7 +135,7 @@ class FormControl extends PureComponent {
     }
 
     return (
-      <span className={styles['form-feedback']}>
+      <span className={classes['form-feedback']}>
         <Icon name={iconName} />
       </span>
     );
@@ -149,11 +149,11 @@ class FormControl extends PureComponent {
     const { getRef, onChange, onFocus, onBlur, disabled, children, name, value, onMask, ...rest } = this.props;
     const isClassDefault = ['radio', 'checkbox', 'textarea', 'select'].indexOf(type) < 0;
     const componentClass = classNames({
-      [styles['form-field']] : isClassDefault,
-      [styles['form-field--radio']]: type === 'radio',
-      [styles['form-field--checkbox']]: type === 'checkbox',
-      [styles['form-field--textarea']]: type === 'textarea',
-      [styles['form-field--select']]: type === 'select'
+      [classes['form-field']] : isClassDefault,
+      [classes['form-field--radio']]: type === 'radio',
+      [classes['form-field--checkbox']]: type === 'checkbox',
+      [classes['form-field--textarea']]: type === 'textarea',
+      [classes['form-field--select']]: type === 'select'
     });
     let tagType;
     // Has type property
@@ -199,8 +199,8 @@ class FormControl extends PureComponent {
     const validationState = formGroup && formGroup.validationState;
     // classes
     const addonClass = classNames(
-      className, styles['form-addon'],
-      { [styles['form-addon--withItens']] : (addonBefore || addonAfter || feedback) }
+      className, classes['form-addon'],
+      { [classes['form-addon--withItens']] : (addonBefore || addonAfter || feedback) }
     );
     // internal components
     const generateAddonBefore = FormControl.addonRender('before', addonBefore);
@@ -223,4 +223,4 @@ class FormControl extends PureComponent {
 /**
  * @example <FormControl />
  */
-export default CSSModules(FormControl, styles);
+export default CSSModules(FormControl, classes);

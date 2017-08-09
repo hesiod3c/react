@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 import * as placeholders from './placeholders';
 //styles
-import data from '../../../interface';
-const styles = data.styles.placeholder;
+import { styles } from '@descco/ui-core';
+const classes = styles.placeholder;
 
 class Placeholder extends PureComponent {
 
@@ -76,4 +76,4 @@ class Placeholder extends PureComponent {
   }
 }
 
-export default CSSModules(Placeholder, styles);
+export default CSSModules(Placeholder, classes);

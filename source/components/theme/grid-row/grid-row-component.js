@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 import classNames from 'classnames';
 //styles
-import data from '../../../interface';
-const styles = data.styles.gridRow;
+import { styles } from '@descco/ui-core';
+const classes = styles.gridRow;
 
 /**
  * GridRow component
@@ -49,19 +49,19 @@ class GridRow extends PureComponent {
     const {reverse, start, center, end, top, middle, bottom, around, between, first, last, ...elementProps} = this.props;
 
     const fullClass = classNames(
-      styles['row'],
+      classes['row'],
       {
-        [styles['reverse']]: reverse,
-        [styles[`start-${start}`]]: start,
-        [styles[`center-${center}`]]: center,
-        [styles[`end-${end}`]]: end,
-        [styles[`top-${top}`]]: top,
-        [styles[`middle-${middle}`]]: middle,
-        [styles[`bottom-${bottom}`]]: bottom,
-        [styles[`around-${around}`]]: around,
-        [styles[`between-${between}`]]: between,
-        [styles[`first-${first}`]]: first,
-        [styles[`last-${last}`]]: last
+        [classes['reverse']]: reverse,
+        [classes[`start-${start}`]]: start,
+        [classes[`center-${center}`]]: center,
+        [classes[`end-${end}`]]: end,
+        [classes[`top-${top}`]]: top,
+        [classes[`middle-${middle}`]]: middle,
+        [classes[`bottom-${bottom}`]]: bottom,
+        [classes[`around-${around}`]]: around,
+        [classes[`between-${between}`]]: between,
+        [classes[`first-${first}`]]: first,
+        [classes[`last-${last}`]]: last
       });
 
     return (
@@ -78,6 +78,6 @@ class GridRow extends PureComponent {
 /**
  * @example <GridRow />
  */
-export default CSSModules(GridRow, styles);
+export default CSSModules(GridRow, classes);
 
 

@@ -7,8 +7,8 @@ import FormControl from '../form-control';
 import Icon from '../icon';
 import Calendar from './calendar/index';
 //styles
-import data from '../../../interface';
-const styles = data.styles.datetimePicker;
+import { styles } from '@descco/ui-core';
+const classes = styles.datetimePicker;
 
 const nof = () => {};
 
@@ -507,7 +507,7 @@ class DatetimePicker extends PureComponent {
             addonBefore={<Icon name="calendar" />}
             key="i"
             type="text"
-            className={styles['form-control']}
+            className={classes['form-control']}
             onFocus={this.openCalendar}
             onChange={this.onInputChange}
             onKeyDown={this.onInputKey}
@@ -532,6 +532,6 @@ DatetimePicker.moment = moment;
 /**
  * @example <DatetimePicker />
  */
-export default CSSModules(DatetimePicker, styles);
+export default CSSModules(DatetimePicker, classes);
 
 
