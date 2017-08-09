@@ -72,7 +72,11 @@ class DatetimePicker extends PureComponent {
     open: PropTypes.bool,
     strictParsing: PropTypes.bool,
     closeOnSelect: PropTypes.bool,
-    closeOnTab: PropTypes.bool
+    closeOnTab: PropTypes.bool,
+    value: PropTypes.any,
+    dateFormat: PropTypes.any,
+    className: PropTypes.string,
+    placeholder: PropTypes.string
   };
 
   /**

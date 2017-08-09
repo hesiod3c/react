@@ -25,29 +25,26 @@ export default (state = initialState, action) => {
 
     return state.set(reducerName, action.payload);
   case `TRANSFER_SELECT_ITEM_OF_${REDUCER_NAME}`:
-    const select = {
+    return state.set(reducerName, {
       list: action.payload.list,
       filteredList: action.payload.filteredList,
       addItems: action.payload.addItems,
       removeItems: action.payload.removeItems
-    };
-    return state.set(reducerName, select);
+    });
   case `TRANSFER_ADD_ITEMS_OF_${REDUCER_NAME}`:
-    const add = {
+    return state.set(reducerName, {
       list: action.payload.list,
       filteredList: action.payload.filteredList,
       addItems: [],
       removeItems: []
-    };
-    return state.set(reducerName, add);
+    });
   case `TRANSFER_REMOVE_ITEMS_OF_${REDUCER_NAME}`:
-    const remove = {
+    return state.set(reducerName, {
       list: action.payload.list,
       filteredList: action.payload.filteredList,
       addItems: [],
       removeItems: []
-    };
-    return state.set(reducerName, remove);
+    });
   default:
     return state;
   }

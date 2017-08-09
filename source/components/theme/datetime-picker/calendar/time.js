@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import onClickOutside from 'react-onclickoutside';
 
 /**
@@ -35,6 +36,20 @@ class DateTimePickerTime extends PureComponent {
       milliseconds: 3
     };
   }
+
+  /**
+   * propTypes
+   * @property {Function} timeFormat
+   */
+  static propTypes = {
+    timeFormat: PropTypes.any,
+    setTime: PropTypes.any,
+    dateFormat: PropTypes.any,
+    selectedDate: PropTypes.any,
+    viewDate: PropTypes.any,
+    showView: PropTypes.any,
+    handleClickOutside: PropTypes.any,
+  };
 
   /**
    * calculateState

@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import onClickOutside from 'react-onclickoutside';
 
 /**
@@ -20,6 +21,24 @@ class DateTimePickerYears extends PureComponent {
     this.alwaysValidDate = this.alwaysValidDate.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
   }
+
+  /**
+   * propTypes
+   * @property {Function} renderYear
+   */
+  static propTypes = {
+    renderYear: PropTypes.node,
+    selectedDate: PropTypes.any,
+    isValidDate: PropTypes.any,
+    viewDate: PropTypes.any,
+    updateOn: PropTypes.any,
+    setDate: PropTypes.any,
+    updateSelectedDate: PropTypes.any,
+    handleClickOutside: PropTypes.any,
+    subtractTime: PropTypes.any,
+    addTime: PropTypes.any,
+    showView: PropTypes.any,
+  };
 
   /**
    * renderYears

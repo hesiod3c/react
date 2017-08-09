@@ -16,6 +16,17 @@ const classes = styles.modal;
  */
 class Modal extends PureComponent {
   /**
+   * @constructor
+   * @param {Object} props
+   */
+  constructor(props){
+    super(props);
+
+    this.overlay = 'overlay';
+    this.content = 'content';
+  }
+
+  /**
    * defaultProps
    * @property {String} effect
    */
@@ -52,12 +63,12 @@ class Modal extends PureComponent {
 
     return (
       <div
-        ref="overlay"
+        ref={(c) => { this.overlay = c; }}
         className={classes.overlay}
         key={key}
       >
         <div
-          ref="content"
+          ref={(c) => { this.content = c; }}
           className={classNames(classes.content, classes[effect])}
           style={ {maxWidth: maxWidth}}
         >

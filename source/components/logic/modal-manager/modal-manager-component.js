@@ -33,7 +33,10 @@ class ModalManager extends PureComponent {
       footer: PropTypes.bool,
       actionButton: PropTypes.any,
       maxWidth: PropTypes.number
-    }))
+    })),
+    className: PropTypes.string,
+    effect: PropTypes.string,
+    onDismiss: PropTypes.func
   };
 
   /**

@@ -54,7 +54,13 @@ class AutosuggestWithTags extends PureComponent {
     reducerName: PropTypes.string,
     placeholder: PropTypes.string,
     validationState: PropTypes.string,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    onGetItems: PropTypes.func,
+    onAddItem: PropTypes.func,
+    onRemoveItem: PropTypes.func,
+    onGetField: PropTypes.func,
+    name: PropTypes.any,
+    options: PropTypes.any
   };
 
   componentWillMount() {

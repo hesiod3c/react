@@ -47,7 +47,12 @@ class SelectWithTags extends PureComponent {
     reducerName: PropTypes.string,
     placeholder: PropTypes.string,
     validationState: PropTypes.string,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    onGetItems: PropTypes.func,
+    onAddItem: PropTypes.func,
+    onRemoveItem: PropTypes.func,
+    name: PropTypes.any,
+    options: PropTypes.any
   };
 
   componentWillMount() {
@@ -89,9 +94,9 @@ class SelectWithTags extends PureComponent {
             name={name}
             value={item}
           >
-            { options.map(item => {
+            { options.map((item, index) => {
               return (
-                <option value={item.value}>{item.label}</option>
+                <option key={index} value={item.value}>{item.label}</option>
               );
             })
             }

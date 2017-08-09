@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import onClickOutside from 'react-onclickoutside';
 
@@ -23,6 +24,24 @@ class DateTimePickerDays extends PureComponent {
     this.alwaysValidDate = this.alwaysValidDate.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
   }
+
+  /**
+   * propTypes
+   * @property {Function} timeFormat
+   */
+  static propTypes = {
+    timeFormat: PropTypes.any,
+    selectedDate: PropTypes.any,
+    viewDate: PropTypes.any,
+    renderDay: PropTypes.any,
+    isValidDate: PropTypes.any,
+    updateOn: PropTypes.any,
+    updateSelectedDate: PropTypes.any,
+    handleClickOutside: PropTypes.any,
+    subtractTime: PropTypes.any,
+    showView: PropTypes.any,
+    addTime: PropTypes.any
+  };
 
   /**
    * Get a list of the days of the week

@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import onClickOutside from 'react-onclickoutside';
 
 const capitalize = (str) => {
@@ -24,6 +25,24 @@ class DateTimePickerMonths extends PureComponent {
     this.alwaysValidDate = this.alwaysValidDate.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
   }
+
+  /**
+   * propTypes
+   * @property {Function} timeFormat
+   */
+  static propTypes = {
+    selectedDate: PropTypes.any,
+    viewDate: PropTypes.any,
+    renderMonth: PropTypes.any,
+    isValidDate: PropTypes.any,
+    updateOn: PropTypes.any,
+    updateSelectedDate: PropTypes.any,
+    handleClickOutside: PropTypes.any,
+    subtractTime: PropTypes.any,
+    showView: PropTypes.any,
+    addTime: PropTypes.any,
+    setDate: PropTypes.any
+  };
 
   /**
    * renderMonths

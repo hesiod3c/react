@@ -1,4 +1,5 @@
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 //styles
 import { styles } from '@descco/ui-core';
@@ -50,7 +51,12 @@ class ProgressBar extends PureComponent {
     loading: PropTypes.number,
     updateTime: PropTypes.number,
     maxProgress: PropTypes.number,
-    progressIncrease: PropTypes.number
+    progressIncrease: PropTypes.number,
+    progressInterval: PropTypes.any,
+    animationTimeout: PropTypes.any,
+    percent: PropTypes.any,
+    actions: PropTypes.any,
+    animationTime: PropTypes.any
   };
 
   componentWillMount() {

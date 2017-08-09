@@ -34,11 +34,13 @@ class FormGroup extends PureComponent {
    * @property {String} validationState
    * @property {Boolean} withoutTopLabel
    */
-  static PropTypes = {
+  static propTypes = {
     controlId: PropTypes.string,
     style: PropTypes.oneOf(['checkbox', 'radio']),
     validationState: PropTypes.oneOf(['success', 'warning', 'error']),
-    withoutTopLabel: PropTypes.bool
+    withoutTopLabel: PropTypes.bool,
+    children: PropTypes.node,
+    className: PropTypes.string
   };
 
   /**

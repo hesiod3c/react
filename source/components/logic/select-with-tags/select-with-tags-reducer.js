@@ -13,21 +13,22 @@ export default (state = initialState, action) => {
   const REDUCER_NAME = action.payload.reducerName ? action.payload.reducerName.toUpperCase() : '';
   const reducerName = action.payload.reducerName;
 
+  const initial = {};
+  const add = {};
+  const remove = {};
+
   switch (action.type) {
   case `SELECT_WITH_TAGS_GET_ITEMS_OF_${REDUCER_NAME}`:
-    const initial = {};
     initial[reducerName] = { items: action.payload.items || [] };
     return state.merge(state, initial);
 
   case `SELECT_WITH_TAGS_ADD_ITEM_OF_${REDUCER_NAME}`:
-    const add = {};
     add[reducerName] = {
       items: action.payload.items
     };
     return state.merge(state, add);
 
   case `SELECT_WITH_TAGS_REMOVE_ITEM_OF_${REDUCER_NAME}`:
-    const remove = {};
     remove[reducerName] = {
       items: action.payload.items
     };

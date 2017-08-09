@@ -18,7 +18,8 @@ class TextRow extends PureComponent {
       PropTypes.string,
       PropTypes.number
     ]),
-    style: PropTypes.object
+    style: PropTypes.object,
+    maxHeight: PropTypes.any
   };
 
   /**

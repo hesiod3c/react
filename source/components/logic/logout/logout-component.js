@@ -4,9 +4,9 @@ import Button from '../../theme/button';
 import Icon from  '../../theme/icon';
 import ModalManager from '../modal-manager';
 
-//styles
-import { styles } from '@descco/ui-core';
-const classes = styles.logout;
+// styles
+// import { styles } from '@descco/ui-core';
+// const classes = styles.logout;
 
 /**
  * Logout Component
@@ -27,14 +27,12 @@ class Logout extends PureComponent {
 
   /**
    * defaultProps
-   * @property {Function} hideNotifier
    * @property {Function} showModal
    * @property {Function} hideModal
    * @property {Array} modal
    * @property {Array} notifier
    */
   static defaultProps = {
-    hideNotifier: () => {},
     showModal: () => {},
     hideModal: () => {},
     modal: [],
@@ -50,7 +48,10 @@ class Logout extends PureComponent {
   static propTypes = {
     showModal: PropTypes.func,
     hideModal: PropTypes.func,
-    modal: PropTypes.array
+    modal: PropTypes.array,
+    onLogout: PropTypes.func,
+    handleLogout: PropTypes.func,
+    className: PropTypes.string
   };
 
   /**

@@ -61,7 +61,11 @@ class Transfer extends PureComponent {
     reducerName: PropTypes.string,
     listTitle: PropTypes.string,
     filteredListTitle: PropTypes.string,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    onGetItems: PropTypes.func,
+    onAddItems: PropTypes.func,
+    onRemoveItems: PropTypes.func,
+    onSelectItem: PropTypes.func
   };
 
   componentWillMount() {

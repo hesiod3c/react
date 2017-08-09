@@ -50,6 +50,7 @@ class FormControl extends PureComponent {
 
   /**
    * propTypes
+   * @property {Node} children
    * @property {Function} getRef
    * @property {Function} onChange
    * @property {Function} onFocus
@@ -60,6 +61,11 @@ class FormControl extends PureComponent {
    * @property {String} type
    */
   static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+    name: PropTypes.string,
+    value: PropTypes.string,
+    onMask: PropTypes.func,
     disabled: PropTypes.bool,
     getRef: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     onChange: PropTypes.func,
