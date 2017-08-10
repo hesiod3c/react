@@ -45,17 +45,12 @@ class Svg extends PureComponent {
   };
 
   pathLoader(src) {
-    try {
-      return require(`!!babel-loader!svg-react-loader!../../../../images/svg/${src}.svg`);
-    } catch (e) {
-      if(src){
-        try {
-          return require(`!!babel-loader!svg-react-loader!../../../../../../../${src}.svg`);
-        } catch (e) {
-          return false;
-        }
+    if(src) {
+      try {
+        return require(`!!babel-loader!svg-react-loader!../../../../images/svg/${src}.svg`);
+      } catch (e) {
+        return false;
       }
-      return false;
     }
   }
 

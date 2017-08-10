@@ -21,7 +21,7 @@ stories.addWithInfo('Bordered', () => (
   </div>
 ));
 
-stories.addWithInfo('Unstyled', () => (
+stories.addWithInfo('Normal', () => (
   <div>
     <List>
       <List.Item>
@@ -37,7 +37,7 @@ stories.addWithInfo('Unstyled', () => (
   </div>
 ));
 
-stories.addWithInfo('WithSubItem', () => (
+stories.addWithInfo('Unstyled', () => (
   <div>
     <List>
       <List.Item>

@@ -46,10 +46,12 @@ class Icon extends PureComponent {
   };
 
   IconPathLoader(name) {
-    try {
-      return require(`!!babel-loader!svg-react-loader!../../../../images/svg/icon/${name}.svg`);
-    } catch (e) {
-      return false;
+    if(name) {
+      try {
+        return require(`!!babel-loader!svg-react-loader!../../../../images/svg/icon/${name}.svg`);
+      } catch (e) {
+        return false;
+      }
     }
   }
 
