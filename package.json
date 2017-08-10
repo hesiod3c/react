@@ -10,7 +10,7 @@
     "lint:js": "eslint source/**",
     "precommit": "yarn lint",
     "prepush": "yarn test",
-    "test": "jest --setupTestFrameworkScriptFile=./internals/test/setup.js --testRegex=/source/.*.test.js?$",
+    "test": "jest --setupTestFrameworkScriptFile=./internals/test/setup.js --testRegex=/source/.*.test.js",
     "test:tdd": "yarn test -- --watch",
     "test:coverage": "yarn test -- --coverage --coverageDirectory=coverage"
   },
@@ -49,14 +49,16 @@
     "husky": "0.14.3",
     "jest": "20.0.4",
     "jsdom": "11.1.0",
-    "react-test-renderer": "^15.6.1"
+    "react-test-renderer": "15.6.1"
   },
   "dependencies": {
-    "@descco/ui-core": "0.1.0",
+    "@descco/ui-core": "0.1.1",
     "classnames": "2.2.5",
+    "moment": "2.18.1",
     "prop-types": "15.5.10",
     "react": "15.6.1",
     "react-css-modules": "4.6.0",
-    "react-dom": "15.6.1"
+    "react-dom": "15.6.1",
+    "react-onclickoutside": "6.4.0"
   }
 }

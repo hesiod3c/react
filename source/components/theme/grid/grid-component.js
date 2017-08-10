@@ -8,7 +8,7 @@ const classes = styles.grid;
 
 /**
  * Grid component
- * @extends {PureComponent }
+ * @extends {PureComponent}
  * @class
  */
 class Grid extends PureComponent {
@@ -35,17 +35,17 @@ class Grid extends PureComponent {
    * @return {ReactElement} markup
    */
   render() {
-    const {fluid, ...elementProps} = this.props;
+    const {fluid, ...rest} = this.props;
 
-    const classes = classNames({
+    const fullClass = classNames({
       [classes['container-fluid']]: fluid,
       [classes['container']]: !fluid,
     });
 
     return (
       <div
-        {...elementProps}
-        className={classes}
+        {...rest}
+        className={fullClass}
       >
         {this.props.children}
       </div>

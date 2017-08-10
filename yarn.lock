@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@descco/ui-core@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@descco/ui-core/-/ui-core-0.1.0.tgz#1d1f86cc642d0b8f4ce81b7275ef68b6671ee036"
+"@descco/ui-core@0.1.1":
+  version v0.1.1
+  resolved "https://registry.yarnpkg.com/@descco/ui-core/-/ui-core-0.1.1.tgz#3f64ac6acafc49dd1072c33d46907ab6b885d079"
 
 "@types/node@^6.0.46":
   version "6.0.85"
@@ -2524,6 +2524,10 @@ minimist@^1.1.1, minimist@^1.2.0:
   dependencies:
     minimist "0.0.8"
 
+moment@2.18.1:
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -2883,7 +2887,11 @@ react-dom@15.6.1:
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
-react-test-renderer@^15.6.1:
+react-onclickoutside@6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.4.0.tgz#f7552307305079bfb111783f408928abe7248a1e"
+
+react-test-renderer@15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-15.6.1.tgz#026f4a5bb5552661fd2cc4bbcd0d4bc8a35ebf7e"
   dependencies:

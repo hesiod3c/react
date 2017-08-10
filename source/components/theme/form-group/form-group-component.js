@@ -22,8 +22,8 @@ class FormGroup extends PureComponent {
    */
   static defaultProps = {
     controlId: '',
-    style: false,
-    validationState: false,
+    style: undefined,
+    validationState: undefined,
     withoutTopLabel: false
   };
 

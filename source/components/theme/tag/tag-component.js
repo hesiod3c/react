@@ -29,7 +29,6 @@ class Tag extends PureComponent {
    */
   static defaultProps = {
     children: false,
-    key: undefined,
     onRemove: () => {},
     onClick: () => {},
     className: undefined
@@ -42,10 +41,6 @@ class Tag extends PureComponent {
    */
   static propTypes = {
     children: PropTypes.any.isRequired,
-    key: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
     onRemove: PropTypes.func,
     onClick: PropTypes.func,
     className: PropTypes.string
@@ -56,7 +51,7 @@ class Tag extends PureComponent {
    * @return {ReactElement} markup
    */
   render() {
-    const { key, children, onRemove, className, ...elementProps } = this.props;
+    const { children, onRemove, className, ...rest } = this.props;
 
     if (!children) {
       return null;
@@ -64,8 +59,7 @@ class Tag extends PureComponent {
 
     return (
       <div
-        {...elementProps}
-        key={key}
+        {...rest}
         className={classNames(className, classes.tag)}
       >
         {children}
