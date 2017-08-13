@@ -6,6 +6,8 @@ import FormGroup from './index';
 import FormLabel from '../form-label/index';
 import FormControl from '../form-control';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/form-group.css';
+
 const stories = storiesOf('FormGroup', module);
 
 stories.addDecorator(withKnobs);

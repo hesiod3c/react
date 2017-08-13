@@ -5,6 +5,8 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 import ChoiceBox from './index';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/choice-box.css';
+
 const stories = storiesOf('ChoiceBox', module);
 
 stories.addDecorator(withKnobs);

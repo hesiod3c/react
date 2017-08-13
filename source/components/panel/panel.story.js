@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 
 import Panel from './index';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/panel.css';
+
 const stories = storiesOf('Panel', module);
 
 stories.addWithInfo('basic', () => (

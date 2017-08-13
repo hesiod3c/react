@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 
 import Breadcrumb from './index';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/breadcrumb.css';
+
 const stories = storiesOf('Breadcrumb', module);
 
 stories.addWithInfo('basic', () => (

@@ -4,6 +4,8 @@ import { withKnobs, boolean, number, select } from '@storybook/addon-knobs';
 
 import Placeholder from './index';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/placeholder.css';
+
 const stories = storiesOf('Placeholder', module);
 
 stories.addDecorator(withKnobs);

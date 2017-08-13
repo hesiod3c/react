@@ -11,6 +11,8 @@ import { autosuggestWithTags } from '../../reducers';
 
 import AutosuggestWithTags from './index';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/autosuggest-with-tags.css';
+
 const stories = storiesOf('Auto Suggest With Tags', module);
 
 stories.addDecorator(withKnobs);

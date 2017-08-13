@@ -4,6 +4,8 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 import GridCol from './index';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/grid-col.css';
+
 const stories = storiesOf('GridCol', module);
 
 stories.addDecorator(withKnobs);

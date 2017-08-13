@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { decorateAction } from '@storybook/addon-actions';
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/alert.css';
+
 import Alert from './index';
 
 const stories = storiesOf('Alert', module);

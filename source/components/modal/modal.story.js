@@ -6,6 +6,8 @@ import { withKnobs } from '@storybook/addon-knobs';
 import Modal from './index';
 import Button from '../button';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/modal.css';
+
 const stories = storiesOf('Modal', module);
 
 stories.addDecorator(withKnobs);

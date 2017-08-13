@@ -11,6 +11,8 @@ import { transfer } from '../../reducers';
 
 import Transfer from './index';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/transfer.css';
+
 const stories = storiesOf('Transfer', module);
 
 stories.addDecorator(withKnobs);

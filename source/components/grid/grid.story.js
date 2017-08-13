@@ -6,6 +6,8 @@ import Grid from './index';
 import GridRow from '../grid-row/index';
 import GridCol from '../grid-col/index';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/grid.css';
+
 const stories = storiesOf('Grid', module);
 
 stories.addDecorator(withKnobs);

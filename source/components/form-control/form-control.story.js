@@ -6,6 +6,8 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import FormGroup from '../form-group/index';
 import FormControl from './index';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/form-control.css';
+
 const stories = storiesOf('FormControl', module);
 
 stories.addDecorator(withKnobs);

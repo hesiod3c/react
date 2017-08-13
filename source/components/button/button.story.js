@@ -6,6 +6,8 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import Button from './index';
 import Icon from '../icon/index';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/button.css';
+
 const stories = storiesOf('Button', module);
 
 stories.addDecorator(withKnobs);

@@ -4,6 +4,8 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 import DatetimePicker from './datetime-picker-component';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/datetime-picker.css';
+
 const stories = storiesOf('DatetimePicker', module);
 
 stories.addDecorator(withKnobs);

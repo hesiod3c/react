@@ -9,6 +9,8 @@ import FormControl from '../form-control/index';
 import FormActions from '../form-actions/index';
 import Button from '../button';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/form.css';
+
 const stories = storiesOf('Form', module);
 
 stories.addDecorator(withKnobs);

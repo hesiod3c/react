@@ -5,6 +5,8 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 
 import Suggestions from './index';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/suggestions.css';
+
 const stories = storiesOf('Suggestions', module);
 
 stories.addDecorator(withKnobs);

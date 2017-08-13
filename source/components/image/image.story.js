@@ -4,6 +4,8 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 import Image from './index';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/image.css';
+
 const stories = storiesOf('Image', module);
 
 stories.addDecorator(withKnobs);

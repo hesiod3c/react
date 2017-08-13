@@ -11,6 +11,8 @@ import { selectWithTags } from '../../reducers';
 
 import SelectWithTags from './index';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/select-with-tags.css';
+
 const stories = storiesOf('Select With Tags', module);
 
 stories.addDecorator(withKnobs);

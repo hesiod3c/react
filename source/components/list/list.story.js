@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 
 import List from './index';
 
+import '../../../node_modules/@descco/ui-core/lib/css/06-components/list.css';
+
 const stories = storiesOf('List', module);
 
 stories.addWithInfo('Bordered', () => (
