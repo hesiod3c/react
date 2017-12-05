@@ -1,5 +1,5 @@
 {
-  "name": "@descco/ui-react",
+  "name": "@descco/react-ui",
   "version": "0.1.0",
   "description": "Descco UI React",
   "main": "lib/index.js",
